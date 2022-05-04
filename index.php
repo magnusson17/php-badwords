@@ -11,7 +11,9 @@
 -->
 
 <?php 
+//1) Creare una variabile con un paragrafo di testo a vostra scelta.
 $phrase = 'ma che cazzo dici?';
+//3) Una parola da censurare viene passata dall'utente tramite parametro GET.
 $paramUri = ( isset($_GET['censura']) ) ? $_GET['censura'] : '';
 $phraseCensured = str_replace($paramUri, '***', $phrase) 
 ?>
@@ -26,6 +28,7 @@ $phraseCensured = str_replace($paramUri, '***', $phrase)
 </head>
 
 <body>
+    <!-- 2) Stampare a schermo il paragrafo e la sua lunghezza. -->
     <p>
         <?php echo $phrase ?>
     </p>
@@ -34,12 +37,14 @@ $phraseCensured = str_replace($paramUri, '***', $phrase)
         <?php echo strlen($phrase) ?>
         caratteri)
     </p>
-
+    <!--  -->
+    <!-- //3) Una parola da censurare viene passata dall'utente tramite parametro GET. -->
     <form method="GET">
         <input type="text" name="censura" placeholder="censura una parola">
         <button type="submit">avanti</button>
     </form>
-
+    <!--  -->
+    <!-- 4) Stampare di nuovo il paragrafo e la sua lunghezza, dopo aver sostituito con tre asterischi (***) tutte le occorrenze della parola da censurare. -->
     <p>
         <?php echo $phraseCensured ?>
     </p>
@@ -48,5 +53,6 @@ $phraseCensured = str_replace($paramUri, '***', $phrase)
         <?php echo strlen($phraseCensured) ?>
         caratteri)
     </p>
+    <!--  -->
 </body>
 </html>
