@@ -12,7 +12,7 @@
 
 <?php 
 //1) Creare una variabile con un paragrafo di testo a vostra scelta.
-$phrase = 'ma che cazzo dici?';
+$phrase = 'ma che cavolo dici?';
 //3) Una parola da censurare viene passata dall'utente tramite parametro GET.
 $paramUri = ( isset($_GET['censura']) ) ? $_GET['censura'] : '';
 $phraseCensured = str_replace($paramUri, '***', $phrase) 
